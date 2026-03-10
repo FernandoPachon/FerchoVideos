@@ -3,13 +3,13 @@ import './App.css'
 const App = () => {
   return (
     <>
-      <header>
-        <div className='container-header'>
+      <header className='container-header'>
+        <div className='container-header-div'>
           <div className='container-logo'>
             <a href=""><img width="100" src="src\assets\imgs\fercho.jpg" alt="" /></a>
           </div>
           <nav className='bar-nav'>
-            <ul>
+            <ul className='bar-nav'>
               <li>Inicio</li>
               <li>Series</li>
               <li>Peliculas</li>

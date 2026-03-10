@@ -16,8 +16,8 @@ const App = () => {
               <li>Generos</li>
             </ul>
           </nav>
-          <div className='container-search'>
-            <input type="text" /><img src="https://www.flaticon.es/icono-gratis/vaso_14090240" alt="" />
+          <div className='container-busqueda'>
+            <input className='input-busqueda' type="text" /><img src="https://www.flaticon.es/icono-gratis/vaso_14090240" alt="" />
           </div>
           <div className='container-user--icon'><a href=""> <img width="100" src="src\assets\imgs\user.png" alt="" /></a></div>
         </div>

@@ -62,11 +62,32 @@ max-width: 1600px;
   align-items: center;
   justify-content: space-between;
 }
-.bar-nav{
+.bar-nav, li{
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 15vh;
   text-decoration: none;
   text-decoration-style: none;
+}
+.bar-nav, li :hover{
+  color: royalblue;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10vh;
+  text-decoration: none;
+  text-decoration-style: none;
+}
+.container-busqueda{
+ width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
 }

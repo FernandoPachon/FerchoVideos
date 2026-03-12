@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -40,10 +43,11 @@
 .read-the-docs {
   color: #888;
 }
+
 /* estilos landing page*/
 
-.container-header{
- position: fixed;
+.container-header {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -53,8 +57,9 @@
   z-index: 1000;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
-.container-header-div{
-max-width: 1600px;
+
+.container-header-div {
+  max-width: 1600px;
   margin: 0 auto;
   height: 100%;
   padding: 0 24px;
@@ -62,7 +67,9 @@ max-width: 1600px;
   align-items: center;
   justify-content: space-between;
 }
-.bar-nav, li{
+
+.bar-nav,
+li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,7 +77,8 @@ max-width: 1600px;
   text-decoration: none;
   text-decoration-style: none;
 }
-.nav-li{
+
+.nav-li {
   color: white;
   cursor: pointer;
   display: flex;
@@ -81,7 +89,8 @@ max-width: 1600px;
   text-decoration-style: none;
   font-size: 2rem;
 }
-.nav-li:hover{
+
+.nav-li:hover {
   color: royalblue;
   cursor: pointer;
   display: flex;
@@ -91,28 +100,63 @@ max-width: 1600px;
   text-decoration: none;
   text-decoration-style: none;
 }
-.container-busqueda{
- display: flex;
+
+.container-busqueda {
+  display: flex;
   align-items: center;
-  background-color: #f0f0f0; 
-  border: 2px solid #3483fa;   
-  border-radius: 12px;        
+  background-color: #f0f0f0;
+  border: 2px solid #3483fa;
+  border-radius: 12px;
   padding: 8px 16px;
-  width: 300px;              
+  width: 300px;
   transition: box-shadow 0.2s ease;
 }
-.input-busqueda{
+
+.input-busqueda {
   border: none;
   background: transparent;
-  outline: none;            
+  outline: none;
   font-size: 16px;
   color: #666;
   width: 100%;
 }
-.modoOscuro{
+
+.modoOscuro {
   cursor: pointer;
 }
-.container-user--icon{
+
+.container-user--icon {
   display: flex;
   flex-direction: row;
+}
+
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.estilos-carta {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #1a1a2e;
+  color: white;
+}
+.estilos-carta:hover {
+  border: 1px solid royalblue;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(5, 0, 0, 0.1);
+  background-color: #1a1a2eb6;
+  color: white;
+  cursor: pointer;
+}
+.estilos-imagen{
+  width: 100%;
+  height: auto;
+  display: block
 }

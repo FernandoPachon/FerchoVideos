@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Cabezera from './assets/Cabezera'
+import axios from 'axios';
 const App = () => {
+
+
   return (
     <>
-    <Cabezera />
-     <p>hola</p>
+      <Cabezera />
+      <h1>Contenedor</h1>
+      
     </>
   )
 }

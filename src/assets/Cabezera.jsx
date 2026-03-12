@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 
 const Cabezera = () => {
   const[oscuro,setOscuro]=useState(false)
+  const[isLogin, setIsLogin]=useState(false)
   const colores={
-    iluminacion: oscuro ? "#ffff" :"#525252fa",
+    iluminacion: oscuro ? "#ffff" :"#353535fa",
     texto: oscuro ?"#000000" : "#ffff"
   }
   const handleModoOscuro = ()=>{
@@ -20,17 +21,22 @@ const Cabezera = () => {
           </div>
           <nav className='bar-nav'>
             <ul className='bar-nav'>
-              <li>Inicio</li>
-              <li>Series</li>
-              <li>Peliculas</li>
-              <li>Generos</li>
+              <li className='nav-li'>Inicio</li>
+              <li className='nav-li'>Series</li>
+              <li className='nav-li'>Peliculas</li>
+              <li className='nav-li'>Generos</li>
             </ul>
           </nav>
           <div className='container-busqueda'>
-            <input className='input-busqueda' type="text" /><img src="https://www.flaticon.es/icono-gratis/vaso_14090240" alt="" />
+            🔍
+            <input className='input-busqueda' type="text"  placeholder='Buscar...'/>
           </div>
-          <div className='container-user--icon'><a href=""> <img width="100" src="src\assets\imgs\user.png" alt="" /></a>
-          <a className='modoOscuro' onClick={handleModoOscuro}>{oscuro ?"☀️" : "🌙"}</a>
+          <div className='container-user--icon'>
+            <p className='nav-li'>{isLogin ?"Ingresar" :"Hola Fernando"}</p>
+            <a href=""> <img width="100" src="src\assets\imgs\user.png" alt="" /></a>
+             </div>
+          <div>
+            <a className='modoOscuro' onClick={handleModoOscuro}>{oscuro ?"☀️" : "🌙"}</a>
           </div>
         </div>
   

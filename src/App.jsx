@@ -8,8 +8,8 @@ const [id,setId]=useState(9882)
 
   return (
     <>
-      <Cabezera />
-      <Catalogo/>
+      <Cabezera setId={setId}/>
+      <Catalogo id={id}/>
       <h1>Contenedor</h1>
       
     </>

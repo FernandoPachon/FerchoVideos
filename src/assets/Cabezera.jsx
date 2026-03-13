@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Cabezera = () => {
+const Cabezera = ({setId}) => {
   const [oscuro, setOscuro] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
   const categorias = [
@@ -28,10 +28,15 @@ const Cabezera = () => {
           </div>
           <nav className='bar-nav'>
             <ul className='bar-nav'>
-              <li className='nav-li'>Inicio</li>
-              <li className='nav-li'>Series</li>
-              <li className='nav-li'>Peliculas</li>
-              <li className='nav-li'>Generos</li>
+              {categorias.map((cat) => (
+                <li
+                key={cat.id}
+                className='nav-li'
+                onClick={()=>setId(cat.id)}
+                >
+                  {cat.nombre}
+                </li>
+              ))}
             </ul>
           </nav>
           <div className='container-busqueda'>

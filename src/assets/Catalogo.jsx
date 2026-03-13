@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-const Catalogo = () => {
+const Catalogo = ({id}) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Configuración de la API
   const apiKey = "59acb3eed66f1b684b545a259676c1a2";
   // Usamos el ID 9882 (Space) como ejemplo funcional
-  const apiUrl = `https://api.themoviedb.org/3/keyword/9882/movies?api_key=${apiKey}&language=es-ES`;
+  const apiUrl = `https://api.themoviedb.org/3/keyword/${id}/movies?api_key=${apiKey}&language=es-ES`;
 
   useEffect(() => {
     const fetchMovies = async () => {
+      setLoading(true)
       try {
         const response = await fetch(apiUrl);
         const data = await response.json();
@@ -23,7 +24,7 @@ const Catalogo = () => {
     };
 
     fetchMovies();
-  }, []);
+  }, [id]);
 
   if (loading) return <p>Cargando películas...</p>;
 

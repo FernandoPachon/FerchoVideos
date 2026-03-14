@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
-const Cabezera = ({setId}) => {
+const Cabezera = ({ setId }) => {
   const [oscuro, setOscuro] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
+  const navigate = useNavigate()
   const categorias = [
     { nombre: 'Espacio', id: 9882 },
     { nombre: 'Anime', id: 210024 },
@@ -30,9 +32,12 @@ const Cabezera = ({setId}) => {
             <ul className='bar-nav'>
               {categorias.map((cat) => (
                 <li
-                key={cat.id}
-                className='nav-li'
-                onClick={()=>setId(cat.id)}
+                  key={cat.id}
+                  className='nav-li'
+                  onClick={() => {
+                    setId(cat.id)
+                    navigate('/')   // ← vuelve al inicio donde está el Catalogo
+                  }}
                 >
                   {cat.nombre}
                 </li>
@@ -44,8 +49,10 @@ const Cabezera = ({setId}) => {
             <input className='input-busqueda' type="text" placeholder='Buscar...' />
           </div>
           <div className='container-user--icon'>
-            <p className='nav-li'>{isLogin ? "Ingresar" : "Hola Fernando"}</p>
-            <a href=""> <img width="100" src="src\assets\imgs\user.png" alt="" /></a>
+            <Link to="/Perfil" className='container-user--icon'>
+              <p className='nav-li'>{isLogin ? "Ingresar" : "Hola Fernando"}</p>
+              <img width="100" src="src\assets\imgs\user.png" alt="" />
+            </Link>
           </div>
           <div>
             <a className='modoOscuro' onClick={handleModoOscuro}>{oscuro ? "☀️" : "🌙"}</a>

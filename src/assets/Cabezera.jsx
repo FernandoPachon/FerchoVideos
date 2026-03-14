@@ -1,17 +1,24 @@
 import React, { useState } from 'react'
 
-const Cabezera = () => {
-  const[oscuro,setOscuro]=useState(false)
-  const[isLogin, setIsLogin]=useState(false)
-  const colores={
-    iluminacion: oscuro ? "#ffff" :"#353535fa",
-    texto: oscuro ?"#000000" : "#ffff"
+const Cabezera = ({setId}) => {
+  const [oscuro, setOscuro] = useState(false)
+  const [isLogin, setIsLogin] = useState(false)
+  const categorias = [
+    { nombre: 'Espacio', id: 9882 },
+    { nombre: 'Anime', id: 210024 },
+    { nombre: 'Guerra', id: 1956 },
+    { nombre: 'Futuro', id: 2902 }
+  ];
+  const colores = {
+    iluminacion: oscuro ? "#ffff" : "#353535fa",
+    texto: oscuro ? "#000000" : "#ffff"
   }
-  const handleModoOscuro = ()=>{
-   setOscuro(!oscuro)
-    document.body.style.backgroundColor=colores.iluminacion
-    document.body.style.color=colores.texto
-  }  
+  const handleModoOscuro = () => {
+    setOscuro(!oscuro)
+    document.body.style.backgroundColor = colores.iluminacion
+    document.body.style.color = colores.texto
+  }
+
   return (
     <>
       <header className='container-header'>
@@ -21,25 +28,30 @@ const Cabezera = () => {
           </div>
           <nav className='bar-nav'>
             <ul className='bar-nav'>
-              <li className='nav-li'>Inicio</li>
-              <li className='nav-li'>Series</li>
-              <li className='nav-li'>Peliculas</li>
-              <li className='nav-li'>Generos</li>
+              {categorias.map((cat) => (
+                <li
+                key={cat.id}
+                className='nav-li'
+                onClick={()=>setId(cat.id)}
+                >
+                  {cat.nombre}
+                </li>
+              ))}
             </ul>
           </nav>
           <div className='container-busqueda'>
             🔍
-            <input className='input-busqueda' type="text"  placeholder='Buscar...'/>
+            <input className='input-busqueda' type="text" placeholder='Buscar...' />
           </div>
           <div className='container-user--icon'>
-            <p className='nav-li'>{isLogin ?"Ingresar" :"Hola Fernando"}</p>
+            <p className='nav-li'>{isLogin ? "Ingresar" : "Hola Fernando"}</p>
             <a href=""> <img width="100" src="src\assets\imgs\user.png" alt="" /></a>
-             </div>
+          </div>
           <div>
-            <a className='modoOscuro' onClick={handleModoOscuro}>{oscuro ?"☀️" : "🌙"}</a>
+            <a className='modoOscuro' onClick={handleModoOscuro}>{oscuro ? "☀️" : "🌙"}</a>
           </div>
         </div>
-  
+
       </header>
     </>
   )

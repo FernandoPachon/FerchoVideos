@@ -160,3 +160,65 @@ li {
   height: auto;
   display: block
 }
+/* Contenedor principal de la tarjeta */
+.estilos-carta {
+  position: relative;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/* Efecto de zoom suave a la tarjeta completa */
+.estilos-carta:hover {
+  transform: scale(1.03);
+}
+
+/* Configuración de la capa de descripción (Overlay) */
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* ESTADO INICIAL: Oculto y abajo */
+  opacity: 0;
+  transform: translateY(100%); 
+  transition: all 0.4s ease-in-out;
+}
+
+/* ESTADO AL HACER HOVER: Visible y en su posición original */
+.estilos-carta:hover .movie-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo del texto dentro de la descripción */
+.movie-overlay p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  /* Limita el texto a un máximo de líneas si es muy largo */
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Grid del catálogo para que se vea ordenado */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}

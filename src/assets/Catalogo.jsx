@@ -44,8 +44,10 @@ const MovieCard = ({ movie }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
   return (
-    <div className='estilos-carta'>
-      <img src={imageUrl} alt={movie.title} className='estilos-imagen' />
+    <div className='estilos-carta' style={{ position: 'relative', overflow: 'hidden' }}>
+      <img src={imageUrl} alt={movie.title} className='estilos-imagen' style={{ width: '100%', display: 'block' }} />
+      
+      {/* Contenedor de Información Base */}
       <div style={{ padding: '10px' }}>
         <h3 style={{ fontSize: '1rem', margin: '10px 0' }}>{movie.title}</h3>
         <p style={{ fontSize: '0.8rem', color: '#666' }}>
@@ -54,6 +56,11 @@ const MovieCard = ({ movie }) => {
         <p style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>
           ⭐ {movie.vote_average}
         </p>
+      </div>
+
+      {/* Capa de Descripción en Hover */}
+      <div className="movie-overlay">
+        <p>{movie.overview || "Sin descripción disponible."}</p>
       </div>
     </div>
   );

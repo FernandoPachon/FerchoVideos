@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const Cabezera = ({ setId }) => {
+const Cabezera = ({ setId, form }) => {
   const [oscuro, setOscuro] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
   const navigate = useNavigate()
@@ -50,7 +50,7 @@ const Cabezera = ({ setId }) => {
           </div>
           <div className='container-user--icon'>
             <Link to="/Perfil" className='container-user--icon'>
-              <p className='nav-li'>{isLogin ? "Ingresar" : "Hola Fernando"}</p>
+              {isLogin ? `Conectarse` : `${form.nombre}`}
               <img width="100" src="src\assets\imgs\user.png" alt="" />
             </Link>
           </div>

@@ -222,3 +222,11 @@ li {
   gap: 25px;
   padding: 20px 0;
 }
+.container-datos--form{
+  display: flex;
+  flex-direction: row;
+}
+.container-datos--form{
+  display: flex;
+  flex-direction: column;
+}

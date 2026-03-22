@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import BotonWhastapp from './BotonWhastapp';
 
 const Cabezera = ({ setId, form }) => {
   const [oscuro, setOscuro] = useState(false)
@@ -60,6 +61,7 @@ const Cabezera = ({ setId, form }) => {
         </div>
 
       </header>
+       <BotonWhastapp/>
     </>
   )
 }

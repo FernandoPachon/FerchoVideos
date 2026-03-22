@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BotonWhastapp from './BotonWhastapp';
 
 const Catalogo = ({id}) => {
   const [movies, setMovies] = useState([]);
@@ -29,13 +30,13 @@ const Catalogo = ({id}) => {
   if (loading) return <p>Cargando películas...</p>;
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Catálogo de Películas</h1>
+    <div style={{ padding: '20px', marginTop:'60px' }}>
       <div className="catalogo-grid">
         {movies.map(movie => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
+      <BotonWhastapp/>
     </div>
   );
 };

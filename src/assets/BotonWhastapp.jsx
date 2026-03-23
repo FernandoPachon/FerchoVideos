@@ -1,11 +1,22 @@
 import React from 'react'
 
-const BotonWhastapp = () => {
+const BotonWhatsapp = () => {
   return (
-    <div>
-      <img src="src\assets\imgs\WhatsApp.svg.webp" alt=""  width="50"/>
-    </div>
+    <a
+      href="https://wa.me/3204049949"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-btn"
+      aria-label="Contactar por WhatsApp"
+    >
+      <img
+        src="/src/assets/imgs/WhatsApp.svg.webp"
+        alt="WhatsApp"
+        width="50"
+        height="50"
+      />
+    </a>
   )
 }
 
-export default BotonWhastapp
+export default BotonWhatsapp

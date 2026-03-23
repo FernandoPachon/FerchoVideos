@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BotonWhatsapp = () => {
+const BotonWhatsapp = ({ oscuro }) => {
   return (
     <a
       href="https://wa.me/3204049949"
@@ -10,7 +10,11 @@ const BotonWhatsapp = () => {
       aria-label="Contactar por WhatsApp"
     >
       <img
-        src="/src/assets/imgs/WhatsApp.svg.webp"
+        src={
+          oscuro
+            ? "src/assets/imgs/whatsapp--v2.png"
+            : "src/assets/imgs/WhatsApp.svg.webp"
+        }
         alt="WhatsApp"
         width="50"
         height="50"

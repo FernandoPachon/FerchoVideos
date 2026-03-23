@@ -11,47 +11,27 @@
   will-change: filter;
   transition: filter 300ms;
 }
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+.logo:hover { filter: drop-shadow(0 0 2em #646cffaa); }
+.logo.react:hover { filter: drop-shadow(0 0 2em #61dafbaa); }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
-
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  a:nth-of-type(2) .logo { animation: logo-spin infinite 20s linear; }
 }
 
-.card {
-  padding: 2em;
-}
+.card { padding: 2em; }
+.read-the-docs { color: #888; }
 
-.read-the-docs {
-  color: #888;
-}
-
-/* estilos landing page*/
-
+/* ===================== HEADER ===================== */
 .container-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 20vh;
+  height: 70px;
   background: #0f0f1a;
   border-bottom: 1px solid #1a1a2e;
   z-index: 1000;
@@ -66,49 +46,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
-.bar-nav,
-li {
+/* ===================== NAV ===================== */
+.bar-nav, li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 1.5rem;
+  list-style: none;
   text-decoration: none;
-  text-decoration-style: none;
 }
 
 .nav-li {
   color: white;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 2rem;
+  font-size: 1rem;
   text-decoration: none;
-  text-decoration-style: none;
-  font-size: 2rem;
+  white-space: nowrap;
+  transition: color 0.2s;
 }
+.nav-li:hover { color: royalblue; }
 
-.nav-li:hover {
-  color: royalblue;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
-  text-decoration: none;
-  text-decoration-style: none;
-}
-
+/* ===================== BUSCADOR ===================== */
 .container-busqueda {
   display: flex;
   align-items: center;
   background-color: #f0f0f0;
   border: 2px solid #3483fa;
   border-radius: 12px;
-  padding: 8px 16px;
-  width: 300px;
+  padding: 6px 12px;
+  width: 260px;
   transition: box-shadow 0.2s ease;
 }
 
@@ -116,73 +85,62 @@ li {
   border: none;
   background: transparent;
   outline: none;
-  font-size: 16px;
+  font-size: 15px;
   color: #666;
   width: 100%;
 }
 
-.modoOscuro {
-  cursor: pointer;
-}
+/* ===================== USUARIO / MODO ===================== */
+.modoOscuro { cursor: pointer; font-size: 1.4rem; }
 
 .container-user--icon {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
 }
 
+/* ===================== CATÁLOGO ===================== */
 .catalogo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.estilos-carta {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #1a1a2e;
-  color: white;
-}
-.estilos-carta:hover {
-  border: 1px solid royalblue;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(5, 0, 0, 0.1);
-  background-color: #1a1a2eb6;
-  color: white;
-  cursor: pointer;
-}
-.estilos-imagen{
-  width: 100%;
-  height: auto;
-  display: block
-}
-/* Contenedor principal de la tarjeta */
+/* ===================== CARTA ===================== */
 .estilos-carta {
   position: relative;
   border-radius: 12px;
   background-color: #1a1a1a;
-  transition: transform 0.3s ease;
+  border: 1px solid #ddd;
+  overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: white;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
-
-/* Efecto de zoom suave a la tarjeta completa */
 .estilos-carta:hover {
   transform: scale(1.03);
+  border-color: royalblue;
 }
 
-/* Configuración de la capa de descripción (Overlay) */
+.estilos-imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay de descripción */
 .movie-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
   color: white;
   padding: 20px;
   box-sizing: border-box;
@@ -190,77 +148,54 @@ li {
   align-items: center;
   justify-content: center;
   text-align: center;
-  
-  /* ESTADO INICIAL: Oculto y abajo */
   opacity: 0;
-  transform: translateY(100%); 
+  transform: translateY(100%);
   transition: all 0.4s ease-in-out;
 }
-
-/* ESTADO AL HACER HOVER: Visible y en su posición original */
 .estilos-carta:hover .movie-overlay {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Estilo del texto dentro de la descripción */
 .movie-overlay p {
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
-  /* Limita el texto a un máximo de líneas si es muy largo */
   display: -webkit-box;
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Grid del catálogo para que se vea ordenado */
-.catalogo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 20px 0;
-}
-.container-datos--form{
-  display: flex;
-  flex-direction: row;
-}
-.container-datos--form{
+/* ===================== FORMULARIO ===================== */
+.container-datos--form {
   display: flex;
   flex-direction: column;
 }
+
+/* ===================== WHATSAPP BTN ===================== */
 .whatsapp-btn {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 9999;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: #25d366;
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
-
   cursor: pointer;
   text-decoration: none;
-
-  /* Animación de pulso */
   animation: pulse 2.5s infinite;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .whatsapp-btn:hover {
   transform: scale(1.12);
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.65);
-  animation: none; /* pausa el pulso al hacer hover */
+  animation: none;
 }
-
 .whatsapp-btn img {
   width: 34px;
   height: 34px;
@@ -271,4 +206,109 @@ li {
   0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
   70%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+
+/* ======================================================
+   MEDIA QUERIES
+   - Móvil:  < 480px
+   - Tablet: 481px – 768px
+   - Laptop: 769px – 1024px
+   - Desktop: > 1024px (estilos base de arriba)
+====================================================== */
+
+/* ---------- MÓVIL (hasta 480px) ---------- */
+@media (max-width: 480px) {
+  #root { padding: 1rem; }
+
+  .container-header { height: auto; padding: 10px 0; }
+
+  .container-header-div {
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  /* Logo más pequeño */
+  .container-logo img { width: 60px !important; }
+
+  /* Nav en columna debajo del logo */
+  .bar-nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    gap: 0.8rem;
+    padding-bottom: 4px;
+  }
+  .nav-li { font-size: 0.78rem; }
+
+  /* Buscador ocupa todo el ancho */
+  .container-busqueda {
+    width: 100%;
+    order: 4;
+  }
+
+  /* Icono usuario + modo oscuro más compactos */
+  .container-user--icon img { width: 28px !important; }
+  .modoOscuro { font-size: 1.1rem; }
+
+  /* Catálogo: 2 columnas */
+  .catalogo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Overlay más pequeño en móvil */
+  .movie-overlay p { font-size: 0.75rem; -webkit-line-clamp: 5; }
+
+  /* WhatsApp más pequeño */
+  .whatsapp-btn { width: 48px; height: 48px; bottom: 16px; right: 16px; }
+  .whatsapp-btn img { width: 26px; height: 26px; }
+}
+
+/* ---------- TABLET (481px – 768px) ---------- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container-header { height: auto; }
+
+  .container-header-div {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .container-logo img { width: 70px !important; }
+
+  .bar-nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+  .nav-li { font-size: 0.88rem; }
+
+  .container-busqueda { width: 200px; }
+
+  /* Catálogo: 3 columnas */
+  .catalogo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .whatsapp-btn { width: 52px; height: 52px; }
+  .whatsapp-btn img { width: 30px; height: 30px; }
+}
+
+/* ---------- LAPTOP (769px – 1024px) ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-header { height: 65px; }
+
+  .container-busqueda { width: 200px; }
+
+  .nav-li { font-size: 0.9rem; }
+
+  /* Catálogo: 3-4 columnas automáticas */
+  .catalogo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+  }
 }

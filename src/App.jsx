@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';  // ← agregar
 import Cabezera from './assets/Cabezera';
 import Catalogo from './assets/Catalogo';
 import Perfil from './assets/Perfil';               // ← agregar
+import Slider from './assets/Slaider';
 
 const App = () => {
   const [id, setId] = useState(9882)
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/" element={<Catalogo id={id} />} />
         <Route path="/Perfil" element={<Perfil setForm={setForm} form={form} setIsLogin={setIsLogin} />} />
       </Routes>
+      <Slider/>
     </>
   )
 }

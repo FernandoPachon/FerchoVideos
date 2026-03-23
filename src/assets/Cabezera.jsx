@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import BotonWhastapp from './BotonWhastapp';
 
-const Cabezera = ({ setId, form }) => {
+const Cabezera = ({ setId, form,soscuro }) => {
   const [oscuro, setOscuro] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
   const navigate = useNavigate()
@@ -60,6 +61,7 @@ const Cabezera = ({ setId, form }) => {
         </div>
 
       </header>
+       <BotonWhastapp oscuro={oscuro}/>
     </>
   )
 }

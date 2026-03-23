@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import BotonWhastapp from './BotonWhastapp';
+import Slider from './Slaider';
 
-const Catalogo = ({id}) => {
+const Catalogo = ({ id }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -30,13 +31,13 @@ const Catalogo = ({id}) => {
   if (loading) return <p>Cargando películas...</p>;
 
   return (
-    <div style={{ padding: '20px', marginTop:'60px' }}>
+    <div style={{ padding: '20px', marginTop: '15rem' }}>
       <div className="catalogo-grid">
         {movies.map(movie => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
-      <BotonWhastapp/>
+      <BotonWhastapp />
     </div>
   );
 };
@@ -47,7 +48,7 @@ const MovieCard = ({ movie }) => {
   return (
     <div className='estilos-carta' style={{ position: 'relative', overflow: 'hidden' }}>
       <img src={imageUrl} alt={movie.title} className='estilos-imagen' style={{ width: '100%', display: 'block' }} />
-      
+
       {/* Contenedor de Información Base */}
       <div style={{ padding: '10px' }}>
         <h3 style={{ fontSize: '1rem', margin: '10px 0' }}>{movie.title}</h3>
